@@ -1,0 +1,305 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet" />
+
+
+    <style>
+        #centrado {
+            text-align: center;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <navbar class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">TECNO_LAB</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">INICIO <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Registro producto.html" > Registrar Productos</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link" href="Formulario.html"><span class="glyphicon glyphicon-user"></span>
+                        <strong>REGISTRO</strong></a>
+                </li>
+            </ul>
+        </div>
+    </navbar>
+
+    <div class="container" id="centrado">
+        <div class="row justify-content-center">
+            <div>
+                <h1 class="mb-5 border border-dark ">NUESTROS PRODUCTOS</h1>
+            </div>
+            <h2 class="border border-dark">GPUs</h2>
+
+            <div class=" col-lg-3 border border-primary">
+                <h4 class="border border-dark mt-2">Msi</h4>
+                <p> GPU Geoforce 6GB GTX 1660</p>
+                <img src="GPU6.jfif" alt="GPU1" width="200" height="200">
+                <input id="precio-1660" type="number" value="399990" hidden>
+                <h4> <strong>$399.990 !!</strong> </h4>
+                <p>Stock: 4 Unid.</p>
+                <a type="button" href="#" class="btn btn-primary">AGREGAR</a>
+
+                <button class="btn btn-success" id="btn-dolar">Dolar</button>
+                <div class="mt-3">
+                    <h4 type="text" id="precio-dolar" />
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 border border-primary">
+                <h4 class="border border-dark mt-2">Asus</h4>
+                <p>Tarjeta de video Geoforce RTX Rog Strike 4GB</p>
+                <img src="GPU2.jpg" alt="GPU1" width="200" height="200">
+                <h4><strong>$199.990 !!</strong></h4>
+
+                <input id="precio-rog" type="number" value="199990" hidden>
+
+                <p>Stock 3 Unid.</p>
+                <a type="button" href="#" class="btn btn-primary">AGREGAR</a>
+
+                <button class="btn btn-success" id="btn-dolar-rog">Dolar</button>
+                <div class="mt-3">
+                    <h4 type="text" id="precio-dolar-rog" />
+                </div>
+
+            </div>
+
+            <div class="col-lg-3 border border-primary">
+                <h4 class="border border-dark mt-2">gigabyte</h4>
+                <p>Tarjeta de video Geoforce GTX 1070 4GB</p>
+                <img src="GPU3.jpg" alt="GPU1" width="200" height="200">
+                <h4><strong>$179.990 !!</strong></h4>
+                <p>Stock 9 Unid.</p>
+                <a type="button" href="#" class="btn btn-primary">AGREGAR</a>
+
+                <button class="btn btn-success" id="btn-dolar-1070">Dolar</button>
+                <div class="mt-3">
+                    <h4 type="text" id="precio-dolar-1070" />
+                </div>
+            </div>
+
+            <div class="col-lg-3 border border-primary">
+                <h4 class=" border border-dark mt-2">Asus</h4>
+                <p>Tarjeta de video Nvidia GTX 2100ti 6GB</p>
+                <img src="GPU4.png" alt="GPU1" width="200" height="200">
+                <h4><strong>$329.990 !!</strong></h4>
+                <p>Stock 14 Unid.</p>
+
+                <a type="button" href="#" class="btn btn-primary">AGREGAR</a>
+
+                <button class="btn btn-success" id="btn-dolar-2100">Dolar</button>
+                <div class="mt-3">
+                    <h4 type="text" id="precio-dolar-2100" />
+                </div>
+            </div>
+
+
+            <h2 class="border border-dark  mb-3 mt-3">Procesadores</h2>
+
+
+            <div class="col-lg-3 border border-primary">
+                <h4 class="border border-dark mt-2">Intel</h4>
+                <p>Procesador Intel Core I9 10th generacion 4.5Ghz</p>
+                <img src="CPU1.jfif" alt="GPU1" width="200" height="200">
+                <h4><strong>$529.990 !!</strong></h4>
+                <p>Stock 19 Unid.</p>
+                <a type="button" href="#" class="btn btn-primary">AGREGAR</a>
+
+                <button class="btn btn-success" id="btn-dolar-i9">Dolar</button>
+                <div class="mt-3">
+                    <h4 type="text" id="precio-dolar-i9" />
+                </div>
+            </div>
+
+            <div class="col-lg-3 border border-primary">
+                <h4 class="border border-dark mt-2"> Intel</h4>
+                <p>Procesador Intel Core I7 10th generacion 3.8Ghz</p>
+                <img src="CPU2.jfif" alt="GPU1" width="200" height="200">
+                <h4><strong>$419.990 !!</strong></h4>
+                <p>Stock 17 Unid.</p>
+                <a type="button" href="#" class="btn btn-primary">AGREGAR</a>
+
+                <button class="btn btn-success" id="btn-dolar-i7">Dolar</button>
+                <div class="mt-3">
+                    <h4 type="text" id="precio-dolar-i7" />
+                </div>
+            </div>
+
+            <div class="col-lg-3 border border-primary">
+                <h4 class="border border-dark mt-2"">Intel</h4>
+                        <p>Procesador Intel Core I5 10th generacion 3.5Ghz</p>
+                        <img src=" CPU3.jfif" alt="GPU1" width="200" height="200">
+                    <h4><strong>$359.990 !!</strong></h4>
+                    <p>Stock 24 Unid.</p>
+                    <a type="button" href="#" class="btn btn-primary">AGREGAR</a>
+            </div>
+
+            <div class="col-lg-3 border border-primary">
+                <h4 class="border border-dark mt-2">Intel</h4>
+                <p>Procesador Intel Core I3 10th generacion 3.0Ghz</p>
+                <img src="CPU4.jfif" alt="GPU1" width="200" height="200">
+                <h4><strong>$299.990 !!</strong></h4>
+                <p>Stock 34 Unid.</p>
+                <a type="button" href="#" class="btn btn-primary">AGREGAR</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer class="text-center bg-primary text-white mt-5 ">
+        <!-- Grid container -->
+        <div class="row">
+            <div class="container p-4 pb-0">
+                <!-- Section: Social media -->
+                <section class="mb-4">
+                    <!-- Facebook -->
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" href="#!"
+                        role="button"><i class="fab fa-facebook-f"></i></a>
+
+                    <!-- Twitter -->
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #55acee;" href="#!"
+                        role="button"><i class="fab fa-twitter"></i></a>
+
+                    <!-- Google -->
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;" href="#!"
+                        role="button"><i class="fab fa-google"></i></a>
+
+                    <!-- Instagram -->
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;" href="#!"
+                        role="button"><i class="fab fa-instagram"></i></a>
+
+                    <!-- Linkedin -->
+                    <a class="btn btn-primary btn-floating m-1" style="background-color: #0082ca;" href="#!"
+                        role="button"><i class="fab fa-linkedin-in"></i></a>
+                    <!-- Github -->
+
+                </section>
+                <!-- Section: Social media -->
+            </div>
+            <!-- Grid container -->
+
+            <!--Grid row-->
+            <div class="container">
+                <div class="row mx-auto">
+                    <!--Grid column-->
+                    <div class="col-lg-12 mb-4">
+                        <h5 class="text-uppercase"> NUESTRA TIENDA:</h5>
+                        <p class="text-center"></p>Teatinos 348, Santiago</p>
+                        <p class="text-center">tecno_lab12345@contacto.class</p>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2020 Copyright:
+                <a class="text-white" href="https://mdbootstrap.com/">TecnoLab.com</a>
+            </div>
+
+        </div>
+
+
+    </footer>
+
+
+
+
+
+</body>
+
+<script>
+
+
+    const calculoDolar = () => {
+        const inputPrecio = document.getElementById('precio-dolar')
+        const inputPrecioRog = document.getElementById('precio-dolar-rog')
+        const inputPrecio1070 = document.getElementById('precio-dolar-1070')
+        const inputPrecio2100 = document.getElementById('precio-dolar-2100')
+        const inputPrecioi9 = document.getElementById('precio-dolar-i9')
+        const inputPrecioi7 = document.getElementById('precio-dolar-i7')
+        const btnDolar = document.getElementById('btn-dolar')
+        const btnDolarRog = document.getElementById('btn-dolar-rog')
+        const btnDolar1070 = document.getElementById('btn-dolar-1070')
+        const btnDolar2100 = document.getElementById('btn-dolar-2100')
+        const btnDolari9 = document.getElementById('btn-dolar-i9')
+        const btnDolari7 = document.getElementById('btn-dolar-i7')
+
+
+        fetch('https://mindicador.cl/api')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.dolar.valor)
+                btnDolar.addEventListener("click", () => {
+                    const valor = 499990 / data.dolar.valor
+                    inputPrecio.innerText = 'El valor es ' + Math.round(valor) + ' dolares'
+
+                })
+                btnDolarRog.addEventListener("click", () => {
+                    const valorRog = 199990 / data.dolar.valor
+
+                    inputPrecioRog.innerText = 'El valor es ' + Math.round(valorRog) + ' dolares'
+                })
+                btnDolar1070.addEventListener("click", () => {
+                    const valor1070 = 179990 / data.dolar.valor
+
+                    inputPrecio1070.innerText = 'El valor es ' + Math.round(valor1070) + ' dolares'
+                })
+                btnDolar2100.addEventListener("click", () => {
+                    const valor2100 = 329990 / data.dolar.valor
+
+                    inputPrecio2100.innerText = 'El valor es ' + Math.round(valor2100) + ' dolares'
+                })
+                btnDolari9.addEventListener("click", () => {
+                    const valori9 = 529990 / data.dolar.valor
+
+                    inputPrecioi9.innerText = 'El valor es ' + Math.round(valori9) + ' dolares'
+
+                })
+                btnDolari7.addEventListener("click", () => {
+                    const valori7 = 419990 / data.dolar.valor
+
+                    inputPrecioi7.innerText = 'El valor es ' + Math.round(valori7) + ' dolares'
+                })
+
+            });
+    }
+    calculoDolar();
+
+
+</script>
+
+
+
+
+
+</html>
