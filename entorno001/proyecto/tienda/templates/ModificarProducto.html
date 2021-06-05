@@ -1,0 +1,51 @@
+{% extends 'Index.html' %} 
+
+{% block titulo %} 
+
+    {{ 'Modificar Producto' }}
+
+{% endblock %}</h1>
+
+{% block contenido %} 
+
+{% if mensaje %}
+<div class="alert alert-success" role="alert">
+    {{ mensaje }}
+</div>
+{% endif %} 
+
+ <form method="POST">
+     {% csrf_token %}
+     <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <table class="table">
+                    {{formulario.as_table}}
+    
+                </table>
+    
+            </div>
+    
+         </div>
+    
+         <div class="row justify-content-center">
+    
+            <div class="col-6">
+    
+                <input type="submit" class="btn btn-danger" value="Modificar">
+                <a href="{% url 'listadoProducto' %}" class="btn btn-success">Listar productos</a>
+                <a href="{% url 'crearProducto' %}" class="btn btn-success">Crear producto</a>
+
+    
+            </div>
+    
+        </div>
+
+
+
+     </div>
+     
+
+ </form>
+ {% endblock %}

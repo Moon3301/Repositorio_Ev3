@@ -1,0 +1,48 @@
+{% extends 'Index.html' %} {% block titulo %} {{ 'Listado de productos' }} {% endblock %}</h1>
+{% block contenido %}
+<p>{{ user }}</p>
+
+{% if listado %}
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <!-- definir los encabezados -->
+            <tr>
+                <th>codigo barra</th>
+                <th>descripción</th>
+                <th>precio costo</th>
+                <th>precio venta</th>
+                <th>marca</th>
+                <th>activo</th>
+                <th>Acción</th>
+            </tr>
+            <!-- crear las fila -->
+            {% for dato in listado %}
+            <tr>
+                <td>{{ dato.codigo_barra }}</td>
+                <td>{{ dato.descripcion }}</td>
+                <td>{{ dato.precio_costo }}</td>
+                <td>{{ dato.precio_venta }}</td>
+                <td>{{ dato.marca}}</td>
+                <td>{{ dato.activo }}</td>
+                <td>
+                    <a href="{% url 'modificarProducto' dato.id %}" class="btn btn-warning">Modificar</a>
+                    <a href="{% url 'eliminarProducto' dato.id %}" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-12">
+        <a href="{% url 'crearProducto' %}" class="btn btn-primary">Crear producto</a>
+    </div>
+</div>
+
+
+
+
+{% else %}
+<h3>No hay filas para mostrar</h3>
+{% endif %} {% endblock %}

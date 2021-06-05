@@ -28,134 +28,7 @@
 
          </script>
 
-        <script>
-            $(function() {
-                $('.btnGuardar').click(function() {
-                    if($('.txtCodigoB').val() == "")
-                                    {
-                                            alert("No especificó el Codigo de barra");
-                                            $('.txtCodigoB').focus();
-                                            return false;
-                                    }
-                    else if($('.txtDesc').val() == "")
-                                    {
-                                            alert("No especificó la descripcion");
-                                            $('.txtDesc').focus();
-                                            return false;
-                                    }                                               
-                    else if($('.txtPrecioCos').val() == "")
-                                    {
-                                            alert("No especificó el precio del costo");
-                                            $('.txtPrecioCos').focus();
-                                            return false;
-                                    }                                             
-                    
-                    else if($('.txtPrecioVen').val() == "")
-                                    {
-                                            alert("No especificó el precio de venta");
-                                            $('.txtPrecioVen').focus();
-                                            return false;
-                                    }
-                    else if($('.txtMarca').val() == "")
-                                    {
-                                            alert("No especificó la marca");
-                                            $('.txtMarca').focus();
-                                            return false;
-                                    }
-                    
-                    else if($('.txtPrecioCos').val() != "")
-                    {
-                            let precioRegex = /^[$]+[0-9]+$/
-                            if(!precioRegex.test($('.txtPrecioCos').val()))
-                            {        
-                                    alert("no coincide con el formato del precio del costo");
-                                    $('.txtPrecioCos').focus();
-                                    return false;
-                            }
-                                                    
-                    }
-
-                    else if($('.txtPrecioVen').val() != "")
-                    {
-                            let precioRegex = /^[$]+[0-9.,]+$/
-                            if(!precioRegex.test($('.txtPrecioVen').val()))
-                            {        
-                                    alert("no coincide con el formato del precio de venta");
-                                    $('.txtPrecioVen').focus();
-                                    return false;
-                            }
-                                                    
-                    }else{
-                        if ("#btnGuardar"){
-                            $("#alerta1").fadeTo(2000,500).slideUp(500, function(){
-                                $("#alerta1").slideUp(500);
-
-                            })
-
-                        }
-
-
-                    }
-                                 
-                                    alert("Los datos son: \n" + 
-                                                    "Codigo de barra  :" + $('.txtCodigoB').val() + "\n" +
-                                                    "Descripcion      :" + $('.txtDesc').val() + "\n" +
-                                                    "Precio de costo  :" + $('.txtPrecioCos').val() + "\n" +
-                                                    "Precio de venta  :" + $('.txtPrecioVen').val() + "\n"  +
-                                                    "Marca            :" + $('.txtMarca').val() + "\n"                                                         
-                                                    );
-                                    
-                                    
-                                    return false;
-                }) 
- 
-                            var letras = 'qwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNMáéíóúÁÉÍÓÚ ';
-                            var texto = 'qwertyuiopasdfghjklñzxcvbnmQWERTYUIOPASDFGHJKLÑZXCVBNMáéíóúÁÉÍÓÚ1234567890-_"#$%!¡?¿ '
-                            var precio= '$,.1234567890';
-                            var numeros= '1234567890';
-
-                            
-                            $('.txtDesc, .txtMarca').keypress(function(e) 
-                            {
-                                    let caracter = String.fromCharCode(e.which);
-                                    
-                                    if(texto.indexOf(caracter) < 0)
-                                            return false;
-                            })
-                            $('.txtCodigoB').keypress(function(e)
-                            {
-                                    let caracter = String.fromCharCode(e.which);
-                                    
-                                    if(numeros.indexOf(caracter) < 0)
-                                            return false;
-                            })
-                            $('.txtPrecioCos, .txtPrecioVen').keypress(function(e) 
-                            {
-                                    let caracter = String.fromCharCode(e.which);
-                                    
-                                    if(precio.indexOf(caracter) < 0)
-                                            return false;
-                            })
-
-            });
-        </script>
-
-        <script>
-            $(document).ready(function(){
-                $("#alerta1").hide();
-
-                    $('.btnGuardar').click(function() {
-                    $("#alerta1").fadeTo(2000,500).slideUp(500, function(){
-
-                        $("#alerta1".slideUp(500));
-                    })
-                })
-
-              
-               
-            })
-
-        </script>
+     
        <style>
            #centrado{
                text-align: center;
@@ -168,101 +41,35 @@
     </head>
     
     <body>
-        
-        
 
-  
-        <navbar  class="navbar navbar-expand-lg navbar-dark bg-black">
-            <a class="navbar-brand" href="#" >TECNO_LAB</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"  >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-    
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">INICIO <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Registro producto.html" > Registrar Productos</a>
-                    </li>
-    
-                    </li>
-                </ul>
-            </div>    
-    
-        </navbar>
-        
+        {% extends 'Index.html' %} {% block titulo %} {{ 'Crear Producto' }} {% endblock %}</h1>
+        {% block contenido %} 
 
-        <div class="container-fluid card bg-light" id="centrado" style="width: 40%; background-color: #4169e1;" >
-            
-        
-            <h1 >REGISTRO DE PRODUCTOS</h1>
-        <form id="formulario">
-
-            <div class="alert alert-success" id="alerta1">
-                <strong>Producto Registrado !!!</strong> 
-              </div>
-
-            <br>
-            <div class="row">
-                <div class="form-group" style="width: 50%; margin: auto;">
-                    <label for="usr">CODIGO DE BARRA: </label>
-                    <input type="text" name="txtCodigoB" maxlength="15" class="txtCodigoB form-control" id="usr">
-    
-                </div>
-            </div>
-            <br>
-            <div class="row">
-                <div class="form-group" style="width: 50%; margin: auto;">
-                    <label for="usr">DESCRIPCION: </label>
-                    <input type="text" name="txtDesc" maxlength="100" class="txtDesc form-control" id="usr">
-    
-                </div>
-
-            </div>
-            <br>
-            <div class="row">
-                <div class="form-group" style="width: 50%; margin: auto;">
-                    <label for="usr">PRECIO COSTO: </label>
-                    <input type="text" name="txtPrecioCos" maxlength="12" class="txtPrecioCos form-control" id="usr">
-    
-                </div>
-
-            </div>
-            <br>
-            <div class="row">
-                <div class="form-group" style="width: 50%; margin: auto;">
-                    <label for="usr">PRECIO DE VENTA: </label>
-                    <input type="text" name="txtPrecioVen" maxlength="12" class="txtPrecioVen form-control" id="usr">
-    
-                </div>
-
-            </div>
-            <br>
-            <div class="row">
-                <div class="form-group" style="width: 50%; margin: auto;">
-                    <label for="usr">MARCA: </label>
-                    <input type="text" name="txtMarca" maxlength="20" class="txtMarca form-control" id="usr">
-    
-                </div>
-
-            </div>
-            <br>
-            
-
-            <br>
-            <div class="row">
-                <a type="button" name="btnGuardar" id="btnGuardar" class="btnGuardar btn btn-success" style="width: 50%; margin: auto;">GUARDAR</a>
-
-            </div>
-
-            
-        </form>
-            <br>
-     
-        
+{% if mensaje %}
+<div class="alert alert-success" role="alert">
+    {{ mensaje }}
+</div>
+{% endif %} 
+<form method="POST">
+    {% csrf_token %}
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <table class="table">
+                {{ formulario.as_table }}
+            </table>
         </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <input type="submit" class="btn btn-primary" value="Guardar">
+        </div>
+    </div>
+</form>
+
+{% endblock %}
+        
+
+       
         
         <footer class="text-center bg-black text-white mt-5 ">
             <!-- Grid container -->
