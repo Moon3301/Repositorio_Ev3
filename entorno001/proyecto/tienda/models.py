@@ -24,7 +24,7 @@ class Producto(models.Model):
     precio_venta = models.IntegerField()
     marca = models.CharField(max_length=50)
     activo = models.BooleanField()
-    usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
+    
 
 
     

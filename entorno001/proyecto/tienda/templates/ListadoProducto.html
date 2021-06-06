@@ -1,4 +1,4 @@
-{% extends 'Index.html' %} {% block titulo %} {{ 'Listado de productos' }} {% endblock %}</h1>
+{% extends 'inicio.html' %} {% block titulo %} {{ 'LISTADO DE PRODUCTOS' }} {% endblock %}</h1>
 {% block contenido %}
 <p>{{ user }}</p>
 
@@ -26,8 +26,8 @@
                 <td>{{ dato.marca}}</td>
                 <td>{{ dato.activo }}</td>
                 <td>
-                    <a href="{% url 'modificarProducto' dato.id %}" class="btn btn-warning">Modificar</a>
-                    <a href="{% url 'eliminarProducto' dato.id %}" class="btn btn-danger">Eliminar</a>
+                    <a href="{% url 'modificarProducto' dato.codigo_barra %}" class="btn btn-warning">Modificar</a>
+                    <a href="{% url 'eliminarProducto' dato.codigo_barra %}" class="btn btn-danger">Eliminar</a>
                 </td>
             </tr>
             {% endfor %}

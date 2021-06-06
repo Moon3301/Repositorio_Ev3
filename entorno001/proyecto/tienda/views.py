@@ -7,10 +7,16 @@ from .forms import ProductoForm
 def inicio (request):
     return render (request, 'Index.html')
 
+def productos (request):
+    return render (request, 'Productos.html')
+
+def usuario (request):
+    return render (request, 'Formulario.html')
+
 def listadoProducto (request):
     listado = Producto.objects.all()
 
-    contexto = {'listado' : listado, 'user' : 'alguien'}
+    contexto = {'listado' : listado, 'user' : ''}
 
     return render(request, 'ListadoProducto.html', contexto)
 
@@ -21,24 +27,24 @@ def crearProducto (request):
         producto = ProductoForm(request.POST)
         producto.save()# insert
         contexto['mensaje'] = 'Datos guardados'
-    return render(request, 'RegistroProducto.html', contexto)
+    return render(request, 'CrearProducto.html', contexto)
 
-def modificarProducto(request, id):
+def modificarProducto(request, codigo_barra):
 
-    producto = Producto.objects.get(id = id)
+    producto = Producto.objects.get(codigo_barra = codigo_barra)
 
     contexto = {'formulario': ProductoForm(instance=producto) }
 
     if request.method == 'POST' :
         formulario = ProductoForm(data=request.POST, instance=producto)
         formulario.save()
-        contexto = {'formulario' : ProductoForm(instance=Producto.objects.get(id = id)) }
+        contexto = {'formulario' : ProductoForm(instance=Producto.objects.get(codigo_barra= codigo_barra)) }
         contexto['mensaje'] = 'Los datos fueron guardados'
         
-    return render(request, 'modificarProducto.html', contexto)
+    return render(request, 'ModificarProducto.html', contexto)
 
 
-def eliminarProducto(request, id ):
-    producto = Producto.objects.get(id = id)
+def eliminarProducto(request, codigo_barra ):
+    producto = Producto.objects.get(codigo_barra = codigo_barra)
     producto.delete()
-    return redirect(to = "listadoProducto")
+    return redirect(to = "ListadoProducto")

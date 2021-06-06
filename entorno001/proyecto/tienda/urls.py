@@ -1,16 +1,17 @@
 from django.urls import path 
-from .views import inicio,listadoProducto, crearProducto, modificarProducto, eliminarProducto
+from .views import inicio,listadoProducto, crearProducto, modificarProducto, eliminarProducto, usuario
 
 urlpatterns = [
     path('',inicio, name= "inicio"),
     path('inicio', inicio, name="inicio"),
     path('listadoProducto', listadoProducto, name="listadoProducto"),
     path('crearProducto', crearProducto, name="crearProducto"),
-    path('modificarProducto/<id>', modificarProducto, name="modificarProducto"),
-    path('eliminarProducto/<id>', eliminarProducto, name="eliminarProducto"),
+    path('modificarProducto/<codigo_barra>', modificarProducto, name="modificarProducto"),
+    path('eliminarProducto/<codigo_barra>', eliminarProducto, name="eliminarProducto"),
+    path('usuario', usuario, name="usuario"),
     
 
-    
+
 
 
 ]
