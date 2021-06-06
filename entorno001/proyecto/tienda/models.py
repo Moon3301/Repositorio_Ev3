@@ -7,7 +7,7 @@ class Usuario(models.Model):
     rut = models.IntegerField(primary_key= True)
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
-    correo = models.CharField(max_length=50)
+    correo = models.EmailField(max_length=50)
     fecha_nac = models.CharField(max_length=50)
     telefono = models.IntegerField()
     pais = models.CharField(max_length=50)

@@ -56,4 +56,4 @@ def modificarProducto(request, codigo_barra):
 def eliminarProducto(request, codigo_barra ):
     producto = Producto.objects.get(codigo_barra = codigo_barra)
     producto.delete()
-    return redirect(to = "ListadoProducto")
+    return redirect(to = "listadoProducto")
