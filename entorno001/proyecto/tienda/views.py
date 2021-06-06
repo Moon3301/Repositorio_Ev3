@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Producto
-from .forms import ProductoForm
+from .models import Producto, Usuario
+from .forms import ProductoForm, UsuarioForm
 
 # Create your views here.
 
@@ -28,6 +28,15 @@ def crearProducto (request):
         producto.save()# insert
         contexto['mensaje'] = 'Datos guardados'
     return render(request, 'CrearProducto.html', contexto)
+
+def usuario (request):
+    contexto = {'form_usuario': UsuarioForm}
+
+    if request.method == 'POST':
+        usuario = UsuarioForm(request.POST)
+        usuario.save()# insert
+        contexto['mensaje'] = 'Datos guardados'
+    return render(request, 'Formulario.html', contexto)
 
 def modificarProducto(request, codigo_barra):
 
