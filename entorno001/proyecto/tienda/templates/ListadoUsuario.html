@@ -1,0 +1,51 @@
+{% extends 'inicio.html' %} {% block titulo %} {{ 'LISTADO DE USUARIOS' }} {% endblock %}</h1>
+{% block contenido %}
+<p>{{ user }}</p>
+
+{% if listadoU %}
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <!-- definir los encabezados -->
+            <tr>
+                <th>Rut</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Correo</th>
+                <th>Fecha nacimiento</th>
+                <th>Telefono</th>
+                <th>Pais</th>
+                <th>Nivel educacional</th>
+            </tr>
+    
+            {% for dato in listadoU %}
+            <tr>
+                <td>{{ dato.rut }}</td>
+                <td>{{ dato.nombre }}</td>
+                <td>{{ dato.apellido }}</td>
+                <td>{{ dato.correo }}</td>
+                <td>{{ dato.fecha_nac}}</td>
+                <td>{{ dato.telefono }}</td>
+                <td>{{ dato.pais }}</td>
+                <td>{{ dato.nivel_educacional }}</td>
+                <td>
+                    <a href="{% url 'modificarUsuario' dato.rut %}" class="btn btn-warning">Modificar</a>
+                    <a href="{% url 'eliminarUsuario' dato.rut %}" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="col-12">
+        <a href="{% url 'usuario' %}" class="btn btn-primary">Crear usuario</a>
+    </div>
+</div>
+
+
+
+
+{% else %}
+<h3>No hay filas para mostrar</h3>
+{% endif %} {% endblock %}

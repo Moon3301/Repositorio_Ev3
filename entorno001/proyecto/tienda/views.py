@@ -59,3 +59,30 @@ def eliminarProducto(request, codigo_barra ):
     producto = Producto.objects.get(codigo_barra = codigo_barra)
     producto.delete()
     return redirect(to = "listadoProducto")
+
+def listadoUsuario (request):
+    listadoU = Usuario.objects.all()
+
+    contexto = {'listadoU' : listadoU, 'user' : ''}
+
+    return render(request, 'ListadoUsuario.html', contexto)
+
+def modificarUsuario(request, rut):
+
+    usuario = Usuario.objects.get(rut = rut)
+
+    contexto = {'form_usuario': UsuarioForm(instance=usuario) }
+
+    if request.method == 'POST' :
+        usuario = UsuarioForm(data=request.POST, instance=usuario)
+        usuario.save()
+        contexto = {'form_usuario' : UsuarioForm(instance=Usuario.objects.get(rut = rut)) }
+        contexto['mensaje'] = 'Los datos fueron guardados'
+        
+    return render(request, 'ModificarUsuario.html', contexto)
+
+
+def eliminarUsuario(request, rut ):
+    usuario = Usuario.objects.get(rut = rut)
+    usuario.delete()
+    return redirect(to = "listadoUsuario")
