@@ -4,6 +4,8 @@ from .forms import ProductoForm, UsuarioForm
 
 # Create your views here.
 
+
+
 def inicio (request):
     return render (request, 'Index.html')
 

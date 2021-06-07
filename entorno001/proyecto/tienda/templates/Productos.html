@@ -1,3 +1,6 @@
+
+{% load static %}
+{% block titulo %}
 <html>
 
 <head>
@@ -28,29 +31,44 @@
 </head>
 
 <body>
-    <navbar class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">TECNO_LAB</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">INICIO <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Registro producto.html" > Registrar Productos</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav navbar-right">
-                <li class="nav-item">
-                    <a class="nav-link" href="Formulario.html"><span class="glyphicon glyphicon-user"></span>
-                        <strong>REGISTRO</strong></a>
-                </li>
-            </ul>
-        </div>
-    </navbar>
+
+    <body>
+
+        <navbar  class="navbar navbar-expand-lg navbar-dark bg-black" style="font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; font-size: 85%;">
+            <a class="navbar-brand" href="#"  >TecnoLab</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"  >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="inicio#" id="fuente">INICIO<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="crearProducto#" class="nav-link" id="fuente">Crear Producto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="listadoProducto#" class="nav-link" id="fuente">Lista de Productos</a>
+                    </li>
+                  
+                    
+                </ul>
+    
+                <ul class="navbar-nav navbar-right">
+                   
+    
+                        <li class="nav-item">
+                            <a class="nav-link" href="usuario#" ><span class="glyphicon glyphicon-user"  >
+    
+                            </span> <strong id="fuente">REGISTRO USUARIO</strong></a>
+                        </li>
+    
+                </ul>
+    
+            </div>    
+    
+        </navbar>
 
     <div class="container" id="centrado">
         <div class="row justify-content-center">
@@ -62,7 +80,7 @@
             <div class=" col-lg-3 border border-primary">
                 <h4 class="border border-dark mt-2">Msi</h4>
                 <p> GPU Geoforce 6GB GTX 1660</p>
-                <img src="GPU6.jfif" alt="GPU1" width="200" height="200">
+                <img src='{% static "img/GPU6.jfif" %}' alt="GPU1" width="200" height="200">
                 <input id="precio-1660" type="number" value="399990" hidden>
                 <h4> <strong>$399.990 !!</strong> </h4>
                 <p>Stock: 4 Unid.</p>
@@ -78,7 +96,7 @@
             <div class="col-lg-3 border border-primary">
                 <h4 class="border border-dark mt-2">Asus</h4>
                 <p>Tarjeta de video Geoforce RTX Rog Strike 4GB</p>
-                <img src="GPU2.jpg" alt="GPU1" width="200" height="200">
+                <img src='{% static "img/GPU2.jpg"  %}'alt="GPU1" width="200" height="200">
                 <h4><strong>$199.990 !!</strong></h4>
 
                 <input id="precio-rog" type="number" value="199990" hidden>
@@ -96,7 +114,7 @@
             <div class="col-lg-3 border border-primary">
                 <h4 class="border border-dark mt-2">gigabyte</h4>
                 <p>Tarjeta de video Geoforce GTX 1070 4GB</p>
-                <img src="GPU3.jpg" alt="GPU1" width="200" height="200">
+                <img src='{% static "img/GPU3.jpg" %}' alt="GPU1" width="200" height="200">
                 <h4><strong>$179.990 !!</strong></h4>
                 <p>Stock 9 Unid.</p>
                 <a type="button" href="#" class="btn btn-primary">AGREGAR</a>
@@ -110,7 +128,7 @@
             <div class="col-lg-3 border border-primary">
                 <h4 class=" border border-dark mt-2">Asus</h4>
                 <p>Tarjeta de video Nvidia GTX 2100ti 6GB</p>
-                <img src="GPU4.png" alt="GPU1" width="200" height="200">
+                <img src='{% static "img/GPU4.png" %}' alt="GPU1" width="200" height="200">
                 <h4><strong>$329.990 !!</strong></h4>
                 <p>Stock 14 Unid.</p>
 
@@ -129,7 +147,7 @@
             <div class="col-lg-3 border border-primary">
                 <h4 class="border border-dark mt-2">Intel</h4>
                 <p>Procesador Intel Core I9 10th generacion 4.5Ghz</p>
-                <img src="CPU1.jfif" alt="GPU1" width="200" height="200">
+                <img src='{% static "img/CPU1.jfif" %}' alt="GPU1" width="200" height="200">
                 <h4><strong>$529.990 !!</strong></h4>
                 <p>Stock 19 Unid.</p>
                 <a type="button" href="#" class="btn btn-primary">AGREGAR</a>
@@ -143,7 +161,7 @@
             <div class="col-lg-3 border border-primary">
                 <h4 class="border border-dark mt-2"> Intel</h4>
                 <p>Procesador Intel Core I7 10th generacion 3.8Ghz</p>
-                <img src="CPU2.jfif" alt="GPU1" width="200" height="200">
+                <img src='{% static "img/CPU2.jfif" %}' alt="GPU1" width="200" height="200">
                 <h4><strong>$419.990 !!</strong></h4>
                 <p>Stock 17 Unid.</p>
                 <a type="button" href="#" class="btn btn-primary">AGREGAR</a>
@@ -157,7 +175,7 @@
             <div class="col-lg-3 border border-primary">
                 <h4 class="border border-dark mt-2"">Intel</h4>
                         <p>Procesador Intel Core I5 10th generacion 3.5Ghz</p>
-                        <img src=" CPU3.jfif" alt="GPU1" width="200" height="200">
+                        <img src='{% static "img/CPU3.jfif" %}' alt="GPU1" width="200" height="200">
                     <h4><strong>$359.990 !!</strong></h4>
                     <p>Stock 24 Unid.</p>
                     <a type="button" href="#" class="btn btn-primary">AGREGAR</a>
@@ -166,7 +184,7 @@
             <div class="col-lg-3 border border-primary">
                 <h4 class="border border-dark mt-2">Intel</h4>
                 <p>Procesador Intel Core I3 10th generacion 3.0Ghz</p>
-                <img src="CPU4.jfif" alt="GPU1" width="200" height="200">
+                <img src='{% static "img/CPU4.jfif" %}' alt="GPU1" width="200" height="200">
                 <h4><strong>$299.990 !!</strong></h4>
                 <p>Stock 34 Unid.</p>
                 <a type="button" href="#" class="btn btn-primary">AGREGAR</a>
@@ -176,7 +194,7 @@
 
 
 
-    <footer class="text-center bg-primary text-white mt-5 ">
+    <footer class="text-center bg-dark text-white mt-5 ">
         <!-- Grid container -->
         <div class="row">
             <div class="container p-4 pb-0">
@@ -303,3 +321,5 @@
 
 
 </html>
+
+{% endblock %} 
