@@ -18,9 +18,90 @@
     </div>
     <div class="row justify-content-center" style="text-align: center">
         <div class="col-6">
-            <input type="submit" class="btn btn-primary" value="Guardar">
+            <input type="submit" class="btn btn-primary" value="Guardar" id="btnGuardar">
         </div>
     </div>
 </form>
+
+<script>
+
+$(function() {
+
+        $('#btnGuardar').click(function() {
+            
+            if($('#id_nombre').val() == "")
+                                    {
+                                            alert("No especificó el nombre");
+                                            $('#id_nombre').focus();
+                                            return false;
+                                    }                                               
+            else if($('#id_apellido').val() == "")
+                                    {
+                                            alert("No especificó el apellido");
+                                            $('#id_apellido').focus();
+                                            return false;
+                                    }                                             
+                                                                                    
+            else if($('#id_correo').val() == "")
+                    {
+                            alert("No especifico el email");
+                            $('#id_correo').focus();
+                            return false;
+                    }
+            else if($('#id_fecha_nac').val() == "")
+                    {
+                            alert("No especificó una fecha de nacimiento");
+                            $('#id_fecha_nac').focus();
+                            return false;
+                    }
+            else if($('#id_telefono').val() == "")
+                    {
+                            alert("No especificó el telefono");
+                            $('#id_telefono').focus();
+                            return false;
+                    }
+            else if($('#id_pais').val() == "Seleccione un pais")
+                    {
+                            alert("No Seleccionó un pais");
+                            $('#id_pais').focus();
+                            return false;
+                    }
+            else if($('#id_nivel_educacional').val() == "Seleccione un nivel educacional")
+                    {
+                            alert("No Seleccionó un nivel educacional");
+                            $('#id_nivel_educacional').focus();
+                            return false;
+                    }
+                    
+            else if($('#id_rut').val() != "")
+                    {
+                        let emailRegex = /^[0-9]+\-([Kk0-9]{1})$/
+                        if(!emailRegex.test($('#id_rut').val()))
+                            {        
+                                    alert("no coincide con el formato del rut");
+                                    $('#id_rut').focus();
+                                    return false;
+                            }
+                                                    
+                    }
+            else if($('#id_correo').val() != "")
+                    {
+                        let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.([a-zA-Z]{2,4})+$/
+                        if(!emailRegex.test($('#id_correo').val()))
+                            {        
+                                    alert("no coincide con el formato del correo");
+                                    $('#id_correo').focus();
+                                    return false;
+                            }
+                                                    
+                    }
+
+                   
+
+                        })
+                    });
+   
+
+</script>
 
 {% endblock %}

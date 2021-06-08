@@ -20,7 +20,7 @@ list_nivel = [
 class Usuario(models.Model):
 
    
-    rut = models.IntegerField(primary_key= True)
+    rut = models.CharField(primary_key= True, max_length=10)
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     correo = models.EmailField(max_length=50)

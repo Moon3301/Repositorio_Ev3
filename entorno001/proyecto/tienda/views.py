@@ -69,13 +69,13 @@ def listadoUsuario (request):
 
 def modificarUsuario(request, rut):
 
-    usuario = Usuario.objects.get(rut = rut)
+    M_usuario = Usuario.objects.get(rut = rut)
 
-    contexto = {'form_usuario': UsuarioForm(instance=usuario) }
+    contexto = {'form_usuario': UsuarioForm(instance=M_usuario) }
 
     if request.method == 'POST' :
-        usuario = UsuarioForm(data=request.POST, instance=usuario)
-        usuario.save()
+        M_usuario = UsuarioForm(data=request.POST, instance=M_usuario)
+        M_usuario.save()
         contexto = {'form_usuario' : UsuarioForm(instance=Usuario.objects.get(rut = rut)) }
         contexto['mensaje'] = 'Los datos fueron guardados'
         
