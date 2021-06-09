@@ -15,6 +15,9 @@ list_nivel = [
 ]
  
 
+
+ 
+
 # Create your models here.
 
 class Usuario(models.Model):

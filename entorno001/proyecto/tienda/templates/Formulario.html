@@ -10,7 +10,7 @@
 <form method="POST">
     {% csrf_token %}
     <div class="row justify-content-center">
-        <div class="col-6">
+        <div class="col-6 col-sm-3">
             <table class="table">
                 {{ form_usuario.as_table }}
             </table>
@@ -28,8 +28,15 @@
 $(function() {
 
         $('#btnGuardar').click(function() {
+
+                if($('#id_rut').val() == "")
+                                    {
+                                            alert("No especificó el Rut");
+                                            $('#id_rut').focus();
+                                            return false;
+                                    }
             
-            if($('#id_nombre').val() == "")
+            else if($('#id_nombre').val() == "")
                                     {
                                             alert("No especificó el nombre");
                                             $('#id_nombre').focus();
@@ -72,6 +79,13 @@ $(function() {
                             $('#id_nivel_educacional').focus();
                             return false;
                     }
+
+            else if($('#id_rut').val().length  < 9)
+                        {        
+                            alert("Faltan caracteres en el rut");
+                            $('#id_rut').focus();
+                            return false;
+                        }
                     
             else if($('#id_rut').val() != "")
                     {

@@ -3,8 +3,8 @@
 <p>{{ user }}</p>
 
 {% if listadoU %}
-<div class="row">
-    <div class="col-12">
+<div class="container row">
+    <div class="col">
         <table class="table">
             <!-- definir los encabezados -->
             <tr>
@@ -20,7 +20,7 @@
             </tr>
     
             {% for dato in listadoU %}
-            <tr class="col-12">
+            <tr class="col-10">
                 <td>{{ dato.rut }}</td>
                 <td>{{ dato.nombre }}</td>
                 <td>{{ dato.apellido }}</td>
@@ -29,7 +29,7 @@
                 <td>{{ dato.telefono }}</td>
                 <td>{{ dato.pais }}</td>
                 <td>{{ dato.nivel_educacional }}</td>
-                  <td class="col-4">
+            <td class="col-2">
                     <a href="{% url 'modificarUsuario' dato.rut %}" class="btn btn-warning">Modificar</a>
                     <a href="{% url 'eliminarUsuario' dato.rut %}" class="btn btn-danger">Eliminar</a>
                 </td>
