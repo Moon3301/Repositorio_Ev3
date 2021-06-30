@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tienda',
+    'rest_framework.authtoken',
+    'rest_framework',
+    'restVentas',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +72,12 @@ TEMPLATES = [
         },
     },
 ]
+
+REST_FRAMEWORK = {
+
+    'DEFAULT_AUTHENTICATION_CLASSES': [ 'rest_framework.authentication.TokenAuthentication',],
+
+}
 
 WSGI_APPLICATION = 'proyecto.wsgi.application'
 

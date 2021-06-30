@@ -7,7 +7,7 @@ from .forms import ProductoForm, UsuarioForm
 
 
 def inicio (request):
-    return render (request, 'Index.html')
+    return render (request, 'index.html')
 
 def productos (request):
     return render (request, 'Productos.html')
