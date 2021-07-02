@@ -13,10 +13,7 @@ from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
 
-    path('',login_required(inicio.as_view()),name = 'index'),
-
-    
-    path('pp',inicio, name= "inicio"),
+    path('',validar, name= "validar"),
     path('inicio', inicio, name="inicio"),
     path('listadoProducto', listadoProducto, name="listadoProducto"),
     path('crearProducto', crearProducto, name="crearProducto"),

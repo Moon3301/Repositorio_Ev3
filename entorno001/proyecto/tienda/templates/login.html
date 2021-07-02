@@ -21,45 +21,49 @@
 <body>
 
     
-
-    {% block titulo %}
-        {{'INICIAR SESION'}}
-    {% endblock %}
+    <h1 style="text-align: center;">INICIAR SESION</h1>
+    
 
     {% block contenido %}
         <form method="POST">
-            {% csrf_token %}
-            <div class="row justify-content-center">
-                <div class="col-12 col-sm-3">USUARIO</div>
-                <div class="col-12 col-sm-3">
-                    <input type="text" name="username" class="form-control">
-                </div>
-
-
-            </div>
-
-            <div class="row justify-content-center">
-                <div class="col-12 col-sm-3">CLAVE</div>
-                <div class="col-12 col-sm-3">
-                    <input type="password" name="password" class="form-control">
-                </div>
-
-
-            </div>
-
-            <div class="row justify-content-center">
+            <div class="container col-9" style="margin: 10%; text-align: center;">
                 
-                <div class="col-12 col-sm-3">
-                    <input type="submit"  class="btn btn-danger" value="Enviar">
+                {% csrf_token %}
+                <div class="row justify-content-center" >
+                    <div class="col-4" >USUARIO</div>
+                        <input type="text" name="username" class="form-control">
                     
-                </div>
+                    </div>
 
+                <div class="row justify-content-center" >
+                    <div class="col-12 col-sm-3">CLAVE</div>
+                        <input type="password" name="password" class="form-control">
+                    
+                    </div>
+
+                    <div class="row justify-content-center" style="margin: 10px;">
+                
+                        <div class="col-12 col-sm-3">
+                            <input type="submit"  class="btn btn-success" value="LOGIN">
+                            
+                        </div>
+        
+        
+                    </div>
+
+                    
 
             </div>
 
+            
+            
+            
 
 
 
+
+            
+            
         </form>
 
 

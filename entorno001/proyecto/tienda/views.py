@@ -5,7 +5,7 @@ from .forms import ProductoForm, UsuarioForm
 # Create your views here.
 
 
-def sesion (request):
+def validar (request):
     return render (request, 'login.html')
 
 def inicio (request):
