@@ -1,8 +1,22 @@
+from django import contrib
+from django import urls
+from django.contrib import auth
 from django.urls import path 
-from .views import eliminarUsuario, inicio,listadoProducto, crearProducto, listadoUsuario, modificarProducto, eliminarProducto, modificarUsuario, productos, usuario,listadoUsuario,modificarUsuario,eliminarUsuario
+from django.contrib import admin
+from django.contrib.auth import login,logout
+from django.urls.conf import include
+from .views import *
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.decorators import login_required
+
+
 
 urlpatterns = [
-    path('',inicio, name= "inicio"),
+
+    path('',login_required(inicio.as_view()),name = 'index'),
+
+    
+    path('pp',inicio, name= "inicio"),
     path('inicio', inicio, name="inicio"),
     path('listadoProducto', listadoProducto, name="listadoProducto"),
     path('crearProducto', crearProducto, name="crearProducto"),
@@ -14,9 +28,4 @@ urlpatterns = [
     path('modificarUsuario/<rut>', modificarUsuario, name="modificarUsuario"),
     path('eliminarUsuario/<rut>', eliminarUsuario, name="eliminarUsuario"),
     
-    
-
-
-
-
 ]

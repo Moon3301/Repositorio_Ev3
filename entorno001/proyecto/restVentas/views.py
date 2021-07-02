@@ -107,7 +107,7 @@ def gestionarUsuario(request, rut):
 
 @csrf_exempt
 @api_view(['POST'])
-def login(request):
+def validar(request):
     if request.method == 'POST':
         username = request.POST = ["username"]
         password = request.POST =["password"]

@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+
+    
+
+    {% block titulo %}
+        {{'INICIAR SESION'}}
+    {% endblock %}
+
+    {% block contenido %}
+        <form method="POST">
+            {% csrf_token %}
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-3">USUARIO</div>
+                <div class="col-12 col-sm-3">
+                    <input type="text" name="username" class="form-control">
+                </div>
+
+
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-3">CLAVE</div>
+                <div class="col-12 col-sm-3">
+                    <input type="password" name="password" class="form-control">
+                </div>
+
+
+            </div>
+
+            <div class="row justify-content-center">
+                
+                <div class="col-12 col-sm-3">
+                    <input type="submit"  class="btn btn-danger" value="Enviar">
+                    
+                </div>
+
+
+            </div>
+
+
+
+
+        </form>
+
+
+
+
+        
+    {% endblock %}
+
+   
+
+    
+</body>
+</html>

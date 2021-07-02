@@ -5,6 +5,8 @@ from .forms import ProductoForm, UsuarioForm
 # Create your views here.
 
 
+def sesion (request):
+    return render (request, 'login.html')
 
 def inicio (request):
     return render (request, 'index.html')

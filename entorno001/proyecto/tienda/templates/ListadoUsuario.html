@@ -29,7 +29,7 @@
                 <td>{{ dato.telefono }}</td>
                 <td>{{ dato.pais }}</td>
                 <td>{{ dato.nivel_educacional }}</td>
-            <td class="col-2">
+            <td class="row">
                     <a href="{% url 'modificarUsuario' dato.rut %}" class="btn btn-warning">Modificar</a>
                     <a href="{% url 'eliminarUsuario' dato.rut %}" class="btn btn-danger">Eliminar</a>
                 </td>
