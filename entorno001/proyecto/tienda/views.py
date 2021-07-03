@@ -20,7 +20,7 @@ def usuario (request):
 def listadoProducto (request):
     listado = Producto.objects.all()
 
-    contexto = {'listado' : listado, 'user' : ''}
+    contexto = {'listado' : listado}
 
     return render(request, 'ListadoProducto.html', contexto)
 
@@ -65,7 +65,7 @@ def eliminarProducto(request, codigo_barra ):
 def listadoUsuario (request):
     listadoU = Usuario.objects.all()
 
-    contexto = {'listadoU' : listadoU, 'user' : ''}
+    contexto = {'listadoU' : listadoU}
 
     return render(request, 'ListadoUsuario.html', contexto)
 
@@ -116,7 +116,7 @@ def modificarProveedor(request, rut):
 def listadoProveedor (request):
     listadoP = Proveedor.objects.all()
 
-    contexto = {'listadoP' : listadoP, 'user' : ''}
+    contexto = {'listadoP' : listadoP}
 
     return render(request, 'listadoProveedor.html', contexto)
 

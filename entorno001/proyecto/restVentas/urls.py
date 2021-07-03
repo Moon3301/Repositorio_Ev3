@@ -8,13 +8,13 @@ urlpatterns = [
     path('listarProducto',listarProducto, name= "listarProducto"),
     path('gestionarProducto/<codigo_barra>', gestionarProducto, name="gestionarProducto"),
 
-    path('listarCategoria',listarUsuario, name="listarCategoria"),
+    path('listarUsuario',listarUsuario, name="listarUsuario"),
     path('gestionarUsuario/<rut>,',gestionarUsuario, name="gestionarUsuario"),
 
     path('listarProveedor',listarProveedor, name="listarProveedor"),
     path('gestionarProveedor/<rut>,',gestionarProveedor, name="gestionarProveedor"),
 
-    
+
     path('login',login, name="login"),
 
     
