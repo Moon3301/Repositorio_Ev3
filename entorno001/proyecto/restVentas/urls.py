@@ -10,7 +10,14 @@ urlpatterns = [
 
     path('listarCategoria',listarUsuario, name="listarCategoria"),
     path('gestionarUsuario/<rut>,',gestionarUsuario, name="gestionarUsuario"),
-    path('login',login, name="login")
+
+    path('listarProveedor',listarProveedor, name="listarProveedor"),
+    path('gestionarProveedor/<rut>,',gestionarProveedor, name="gestionarProveedor"),
+
+    
+    path('login',login, name="login"),
+
+    
   
    
     

@@ -1,0 +1,26 @@
+{% extends 'inicio.html' %}    {% block titulo %} {{ 'INGRESAR PROVEEDOR' }} {% endblock %}</h1>
+{% block contenido %} 
+
+{% if mensaje %}
+
+<div class="alert alert-success" role="alert">
+    {{ mensaje }}
+</div>
+{% endif %} 
+<form method="POST">
+    {% csrf_token %}
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <table class="table">
+                {{ form_proveedor.as_table }}
+            </table>
+        </div>
+    </div>
+    <div class="row justify-content-center" style="text-align: center">
+        <div class="col-6">
+            <input type="submit" class="btn btn-primary" value="Guardar">
+        </div>
+    </div>
+</form>
+
+{% endblock %}

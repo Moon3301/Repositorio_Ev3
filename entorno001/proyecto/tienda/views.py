@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Producto, Usuario
-from .forms import ProductoForm, UsuarioForm
+from .models import *
+from .forms import *
 
 # Create your views here.
 
@@ -88,3 +88,40 @@ def eliminarUsuario(request, rut ):
     usuario = Usuario.objects.get(rut = rut)
     usuario.delete()
     return redirect(to = "listadoUsuario")
+
+
+def ingresarProveedor (request):
+    contexto = {'form_proveedor': ProveedorForm}
+
+    if request.method == 'POST':
+        proveedor = ProveedorForm(request.POST)
+        proveedor.save()# insert
+        contexto['mensaje'] = 'Datos guardados'
+    return render(request, 'ingresarProveedor.html', contexto)
+
+def modificarProveedor(request, rut):
+
+    proveedor = Proveedor.objects.get(rut = rut)
+
+    contexto = {'form_proveedor': ProveedorForm(instance=proveedor) }
+
+    if request.method == 'POST' :
+        proveedor = ProveedorForm(data=request.POST, instance=proveedor)
+        proveedor.save()
+        contexto = {'form_proveedor' : ProveedorForm(instance=Proveedor.objects.get(rut = rut)) }
+        contexto['mensaje'] = 'Los datos fueron guardados'
+
+    return render(request, 'modificarProveedor.html', contexto)
+
+def listadoProveedor (request):
+    listadoP = Proveedor.objects.all()
+
+    contexto = {'listadoP' : listadoP, 'user' : ''}
+
+    return render(request, 'listadoProveedor.html', contexto)
+
+
+def eliminarProveedor(request, rut ):
+    proveedor = Proveedor.objects.get(rut = rut)
+    proveedor.delete()
+    return redirect(to = "listadoProveedor")

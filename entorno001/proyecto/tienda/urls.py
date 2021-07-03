@@ -8,11 +8,16 @@ from django.urls.conf import include
 from .views import *
 from django.contrib.auth.views import LoginView
 from django.contrib.auth.decorators import login_required
+from rest_framework.authtoken.views import obtain_auth_token
 
 
 
 urlpatterns = [
 
+    path('listadoProveedor', listadoProveedor, name="listadoProveedor"),
+    path('ingresarProveedor', ingresarProveedor, name="ingresarProveedor"),
+    path('modificarProveedor/<rut>', modificarProveedor, name="modificarProveedor"),
+    path('eliminarProveedor/<rut>', eliminarProveedor, name="eliminarProveedor"),
     path('',validar, name= "validar"),
     path('inicio', inicio, name="inicio"),
     path('listadoProducto', listadoProducto, name="listadoProducto"),

@@ -92,9 +92,42 @@
 
                     </div>
                 </li>
+                {% if user.is_authenticated  %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Proveedores
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a href="{% url 'listadoProveedor' %}" class="dropdown-item" id="fuente">Lista de Proveedores</a>
+                        <a href="{% url 'ingresarProveedor' %}" class="dropdown-item" id="fuente">Crear de Proveedores</a>
+
+                    </div>
+                </li>
+                {% else %}
+
+                {% endif %}
 
             </ul>
+            {% if user.is_authenticated  %}
+            <ul class="nav navbar-nav navbar-right">
 
+                <li ><a href="{% url 'logout' %}">Cerrar Sesion</a></li>
+                
+                <li ><a href="#"> @{{ user.username }}</a></li>
+
+                {% else %}
+                
+            
+                <li><a href="{% url 'login' %}"> Iniciar Sesion</a></li>
+            
+            
+                {% endif %}
+            
+            
+            </ul>
+            
+
+            
         </div>    
 
     </navbar>

@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('tienda.urls')),
     path('api/',include('restVentas.urls')),
+    path('accounts/', include('django.contrib.auth.urls') ),
 ]
 
 if settings.DEBUG:
